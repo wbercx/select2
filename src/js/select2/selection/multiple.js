@@ -34,6 +34,7 @@ define([
 
     this.$selection.on('click', '.select2-selection__choice__remove',
       function (evt) {
+      evt.stopPropagation();
       var $remove = $(this);
       var $selection = $remove.parent();
 
