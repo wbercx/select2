@@ -130,8 +130,6 @@ define([
     });
 
     this.trigger('open');
-
-    this.$search.val(item.text + ' ');
   };
 
   Search.prototype.resizeSearch = function () {
@@ -140,11 +138,11 @@ define([
     var width = '';
 
     if (this.$search.attr('placeholder') !== '') {
-      width = this.$selection.find('.select2-selection__rendered').innerWidth();
+      width = this.$selection.find('.select2-selection__rendered').innerWidth() || '100%';
     } else {
       var minimumWidth = this.$search.val().length + 1;
 
-      width = (minimumWidth * 0.75) + 'em';
+      width = (minimumWidth * 0.75) + 'rem';
     }
 
     this.$search.css('width', width);
